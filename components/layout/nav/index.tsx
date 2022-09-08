@@ -1,44 +1,24 @@
 import React from 'react'
 import NextLink from "next/link"
 import {  Image, Flex, Button,  HStack, Link , chakra, Text, Box } from '@chakra-ui/react';
-import BoldoLogo from '../../assets/icons/Boldo_Logo.svg'
+import BoldoLogo from '../../../assets/icons/Boldo_Logo.svg'
+import { MobileNav } from './MobileNav';
+import { themeContext, ThemeProp } from '../../../theme';
 
 const data = [
-    // {
-    //     label: 'Product',
-    //     link: '/'
-    // },
-    // {
-    //     label: 'Blog',
-    //     link: '/blog'
-    // },
+    {
+        label: 'Product',
+        link: '/'
+    },
+    {
+        label: 'Blog',
+        link: '/blog'
+    },
     {
         label: 'About',
         link: '/about'
     },
 ]
-
-interface ThemeProp {
-    light: {
-        textColor: string,
-        bg: string,
-    },
-    dark: {
-        textColor: string,
-        bg: string,
-    },
-}
-
-const themeContext: ThemeProp = {
-    light: {
-        textColor: '#0A2640',
-        bg: '#FFFFFF',
-    },
-    dark: {
-        textColor: '#0A2640',
-        bg: '#FFFFFF',
-    },
-}
 
 interface NavbarProp {
     theme?: string
@@ -61,23 +41,24 @@ const Navbar = ({
                 display={'flex'}
                 justifyContent={'center'}
                 alignItems={'center'}
-                // width={90}
+                _hover={{
+                  textDecoration: 'none',
+                }}
             >
-                {/* <Box width={'100%'}> */}
-                    <BoldoLogo />
-                {/* </Box> */}
-                <Text
-                    color={themeContext[theme as keyof ThemeProp]?.textColor}
-                    // fontFamily={'Manrope'}
-                    fontWeight={700}
-                    fontSize={35}
-                    marginLeft={3}
-                    alignSelf={'baseline'}
-                >Boldo</Text>
+              <BoldoLogo />
+              <Text
+                  color={themeContext[theme as keyof ThemeProp]?.textColor}
+                  // fontFamily={'Manrope'}
+                  fontWeight={700}
+                  fontSize={35}
+                  marginLeft={3}
+                  alignSelf={'baseline'}
+              >Boldo</Text>
             </Link>
         </NextLink>
         
         <HStack as="nav" spacing="5">
+          <Box display={{ base: 'none', md: 'block' }}>
           {data.map((item: any, index: number) => (
             <NextLink passHref href={item?.link} key={index}>
                 <Link
@@ -89,6 +70,7 @@ const Navbar = ({
                 </Link>
             </NextLink>
           ))}
+          </Box>
           <Button
             p={4}
             border={`2px solid ${themeContext[theme as keyof ThemeProp]?.textColor}`}
@@ -97,6 +79,8 @@ const Navbar = ({
           >
             Login
           </Button>
+
+          <MobileNav data={data} />
         </HStack>
         
       </Flex>

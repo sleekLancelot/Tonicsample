@@ -1,16 +1,16 @@
 import { Box } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { Footer, Navbar } from '../components'
-import { HomeScreen } from '../features/home'
+import { BlogScreen } from '../features/blog'
 
-const Home: NextPage = () => {
+const Blog: NextPage = () => {
   return (
     <Box>
-      {/* <Navbar /> */}
-      <HomeScreen />
+      <Navbar />
+      <BlogScreen />
       <Footer />
     </Box>
   )
 }
 
-export default Home
+export default Blog
