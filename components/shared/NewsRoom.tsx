@@ -24,6 +24,7 @@ const NewsRoom = ({
 
         <Grid
             templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
+            placeItems={{ base: 'initial', md: 'center'}}
             gap={[10,3]}
             my={10}
         >

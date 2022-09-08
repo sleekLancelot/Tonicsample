@@ -28,16 +28,16 @@ const ContactCard = () => {
 				justifyContent={'center'}
 				alignItems={'center'}
 			>
-				<Text as={Container} color={'white'} fontSize={[25, 35]} fontWeight={400} textAlign={'center'} fontFamily={'manrope'}>
+				<Text maxW={'container.sm'} as={Container} color={'white'} fontSize={[25, 40]} fontWeight={400} textAlign={'center'} fontFamily={'manrope'}>
 					An enterprise template to ramp up your company website
 				</Text>
 				<Box 
-					width={'100%'}
+					width={{base:'100%', md:'85%'}}
 					as={'form'}
 					marginTop={10}
 					display={'flex'}
 					flexDirection={{base: 'column', md: 'row'}}
-					justifyContent={'space-between'}
+					justifyContent={'space-around'}
 					alignItems={'center'}
 				>
 							<Input

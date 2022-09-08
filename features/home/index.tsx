@@ -220,6 +220,7 @@ const HomeScreen = () => {
 
 					<Grid
 						templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
+						placeItems={{ base: 'initial', md: 'center'}}
 						gap={[10,3]}
 						my={10}
 					>
@@ -398,7 +399,8 @@ const HomeScreen = () => {
 						Icon={<Snape />}
 						name={'Severus Snape'}
 						role={'Manager @ Slytherin'}
-						// height={{base: 'auto', md: 320}}
+						height={{base: 'auto', md: 320}}
+						profileOffset={7}
 					/>
 					<Testimony
 						message={'“Release facebook responsive web design business model canvas seed money monetization.”'}
@@ -423,12 +425,8 @@ const HomeScreen = () => {
 					/>
 
 					<SimpleGrid
-						// gap={10}
-						// justify={'space-between'}
-						// alignItems={'center'}
-						// direction={{base: 'column', md: 'row'}}
 						templateColumns={{ sm: '1fr', md: '1fr 1fr' }}
-						spacing={6}
+						spacing={5}
 						placeItems={{ sm: 'initial', md: 'flex-start flex-end'}}
 					>
 						<Text fontSize={36} fontWeight={400}>

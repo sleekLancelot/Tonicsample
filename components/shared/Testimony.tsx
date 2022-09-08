@@ -7,6 +7,7 @@ interface TestimonyProps {
     name: string
     role: string
     height?: any
+    profileOffset?: string | number
 }
 const Testimony = ({
     message,
@@ -14,6 +15,7 @@ const Testimony = ({
     name,
     role,
     height= 'auto',
+    profileOffset,
 }: TestimonyProps) => {
   return (
     <Box
@@ -26,7 +28,7 @@ const Testimony = ({
     >
         <Text my={5} color={'#000'} fontSize={24} fontWeight={400}>{message}</Text>
 
-        <HStack>
+        <HStack position={'relative'} top={{base: 'initial',md: profileOffset}}>
             {Icon}
             <VStack align={'flex-start'} mb={5}>
                 <Text color={'#0A2640'} fontSize={16} fontWeight={700}>{name}</Text>
